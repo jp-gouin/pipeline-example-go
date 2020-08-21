@@ -17,5 +17,9 @@ stages:
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
 - name: Deploy
   steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
+  - applyAppConfig:
+      catalogTemplate: cattle-global-data:i3s-catalog-gitea
+      version: 1.9.4
+      name: gitea-app
+      targetNamespace: p-qvc5f-pipeline
+notification: {}
